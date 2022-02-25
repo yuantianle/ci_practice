@@ -4,8 +4,7 @@
 def conv_num(num_str):
     hexset = ['0', '1', '2', '3', '4', '5', '6',
               '7', '8', '9', '10', 'A', 'B', 'C',
-              'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e',
-              'f']
+              'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f']
 
     minus_flag = False
     if num_str[0] == '-':
@@ -54,11 +53,3 @@ def conv_num(num_str):
             return -sum
         else:
             return sum
-
-
-def my_datetime(num_sec):
-    return None
-
-
-def conv_endian(num, endian='big'):
-    return None
