@@ -2,7 +2,7 @@ import unittest
 from task import conv_num
 
 
-class TestCase(unittest.TestCase):
+class TestFunction1(unittest.TestCase):
 
     def test_1(self):
         input = "12345"
@@ -12,6 +12,16 @@ class TestCase(unittest.TestCase):
     def test_2(self):
         input = "-1234.5"
         expection = -1234.5
+        self.assertEqual(conv_num(input), expection)
+
+    def test_3(self):
+        input = "-.45"
+        expection = -0.45
+        self.assertEqual(conv_num(input), expection)
+
+    def test_4(self):
+        input = "-123."
+        expection = -123.0
         self.assertEqual(conv_num(input), expection)
 
 
