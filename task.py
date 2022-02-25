@@ -12,11 +12,12 @@ def conv_num(num_str):
     float_flag = 0
     point_index = -1
 
-    if string.isdigit(num_str):
+    llen = len(num_str)
+    if num_str.isdigit():
         sum = 0
-        len = len(num_str)
-        for i in range(len(num_str)):
-            sum += pow(10, (len - i))
+
+        for i in range(llen):
+            sum += int(num_str[i]) * pow(10, (llen - i -1))
         if minus_flag:
             return -sum
         else:
@@ -39,12 +40,12 @@ def conv_num(num_str):
                     return None
         sum = 0.0
         Positionflag = 0
-        for i in range(point_index, 0, -1):
-            sum += (num_str[i]-'0')*pow(10, Positionflag)
+        for i in range(point_index-1, -1, -1):
+            sum += (int(num_str[i])) * pow(10, Positionflag)
             Positionflag += 1
         Positionflag = 1
         for i in range(point_index+1, len(num_str)):
-            sum += (num_str[i]-'0')*pow(10, -Positionflag)
+            sum += (int(num_str[i])) * pow(10, -Positionflag)
             Positionflag += 1
         if minus_flag:
             return -sum
