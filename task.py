@@ -45,8 +45,8 @@ def f1_transfer_hex(num_str, minus_flag):
 
     for i in range(len(num_str)):
         if i != 0 and i != 1 and num_str[i] not in hexset:
-            return None
-    return None
+            return 1
+    return 1
 
 
 def conv_num(num_str):
@@ -56,9 +56,9 @@ def conv_num(num_str):
         minus_flag = True
 
     if num_str.isdigit():
-        f1_transfer_digit(num_str, minus_flag)
+        return f1_transfer_digit(num_str, minus_flag)
 
     if (num_str[0] == '0') and (num_str[1] == 'x'):
-        f1_transfer_float(num_str, minus_flag)
+        return f1_transfer_hex(num_str, minus_flag)
     else:
-        f1_transfer_hex(num_str, minus_flag)
+        return f1_transfer_float(num_str, minus_flag)

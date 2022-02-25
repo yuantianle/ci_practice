@@ -25,12 +25,6 @@ class TestFunction1(unittest.TestCase):
         self.assertEqual(conv_num(input), expection)
 
 
-class TestFunction2(unittest.TestCase):
-
-    def test_1(self):
-        self.assertEqual(1, 1)
-
-
 class TestFunction3(unittest.TestCase):
 
     def test_1(self):
