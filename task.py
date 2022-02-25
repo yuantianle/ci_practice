@@ -2,8 +2,8 @@ import string
 
 
 def conv_num(num_str):
-    hexset = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'A', 'B', 'C', 'D', 'E', 'F'
-                                                                                               'a', 'b', 'c', 'd', 'e',
+    hexset = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'A', 'B',
+              'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e',
               'f']
 
     minus_flag = False
@@ -19,7 +19,7 @@ def conv_num(num_str):
         sum = 0
 
         for i in range(llen):
-            sum += int(num_str[i]) * pow(10, (llen - i -1))
+            sum += int(num_str[i]) * pow(10, (llen - i - 1))
         if minus_flag:
             return -sum
         else:
