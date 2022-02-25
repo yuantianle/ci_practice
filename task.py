@@ -10,6 +10,7 @@ def f1_transfer_digit(num_str, minus_flag):
     else:
         return sum
 
+
 def f1_transfer_float(num_str, minus_flag):
     float_flag = 0
     point_index = -1
@@ -36,6 +37,7 @@ def f1_transfer_float(num_str, minus_flag):
     else:
         return sum
 
+
 def f1_transfer_hex(num_str, minus_flag):
     hexset = ['0', '1', '2', '3', '4', '5', '6',
               '7', '8', '9', '10', 'A', 'B', 'C',
@@ -46,8 +48,8 @@ def f1_transfer_hex(num_str, minus_flag):
             return None
     return None
 
+
 def conv_num(num_str):
-    
     minus_flag = False
     if num_str[0] == '-':
         num_str = num_str[1:]
