@@ -16,7 +16,7 @@ def f1_transfer_float(num_str, minus_flag):
     float_flag = 0
     point_index = -1
     for i in range(len(num_str)):
-        if num_str[i] in '~`!@#$%^&*()_+-=' or string.ascii_lowercase + string.ascii_uppercase:
+        if num_str[i] in ('~`!@#$%^&*()_+-=' + string.ascii_lowercase + string.ascii_uppercase):
             return None
         elif num_str[i] == ".":
             if float_flag < 1:
