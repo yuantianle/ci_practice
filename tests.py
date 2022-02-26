@@ -34,6 +34,21 @@ class TestFunction1(unittest.TestCase):
         expection = -171
         self.assertEqual(conv_num(input), expection)
 
+    def test_7(self):
+        input = "0xAZ4"
+        expection = None
+        self.assertEqual(conv_num(input), expection)
+
+    def test_8(self):
+        input = "12.3.45"
+        expection = None
+        self.assertEqual(conv_num(input), expection)
+
+    def test_9(self):
+        input = "12345A"
+        expection = None
+        self.assertEqual(conv_num(input), expection)
+
 class TestFunction3(unittest.TestCase):
 
     def test_1(self):

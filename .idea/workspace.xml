@@ -21,7 +21,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for tests.TestFunction1.test_6">
+  <component name="RunManager" selected="Python tests.Unittests for tests.TestFunction1.test_9">
     <configuration name="task" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ci_example" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,20 +57,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestFunction1.test_5" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="ci_example" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestFunction1.test_5&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for tests.TestFunction1.test_6" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="ci_example" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,7 +71,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestFunction3" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.TestFunction1.test_7" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="ci_example" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,17 +81,31 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestFunction3&quot;" />
+      <option name="_new_target" value="&quot;tests.TestFunction1.test_7&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests.TestFunction1.test_9" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="ci_example" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.TestFunction1.test_9&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_6" />
-        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_5" />
-        <item itemvalue="Python.task" />
+        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_9" />
         <item itemvalue="Python tests.Unittests for tests.TestFunction1" />
-        <item itemvalue="Python tests.Unittests for tests.TestFunction3" />
+        <item itemvalue="Python.task" />
+        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_7" />
+        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_6" />
       </list>
     </recent_temporary>
   </component>
@@ -119,16 +119,5 @@
       <updated>1645773409557</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/task.py</url>
-          <line>53</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
