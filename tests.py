@@ -1,10 +1,59 @@
 import unittest
+from task import conv_num
 
 
-class TestCase(unittest.TestCase):
+class TestFunction1(unittest.TestCase):
 
-    def test1(self):
-        self.assertTrue(True)
+    def test_1(self):
+        input = "12345"
+        expection = 12345
+        self.assertEqual(conv_num(input), expection)
+
+    def test_2(self):
+        input = "-1234.5"
+        expection = -1234.5
+        self.assertEqual(conv_num(input), expection)
+
+    def test_3(self):
+        input = "-.45"
+        expection = -0.45
+        self.assertEqual(conv_num(input), expection)
+
+    def test_4(self):
+        input = "-123."
+        expection = -123.0
+        self.assertEqual(conv_num(input), expection)
+
+    def test_5(self):
+        input = "-0xAB"
+        expection = -171
+        self.assertEqual(conv_num(input), expection)
+
+    def test_6(self):
+        input = "-0XAb"
+        expection = -171
+        self.assertEqual(conv_num(input), expection)
+
+    def test_7(self):
+        input = "0xAZ4"
+        expection = None
+        self.assertEqual(conv_num(input), expection)
+
+    def test_8(self):
+        input = "12.3.45"
+        expection = None
+        self.assertEqual(conv_num(input), expection)
+
+    def test_9(self):
+        input = "12345A"
+        expection = None
+        self.assertEqual(conv_num(input), expection)
+
+
+class TestFunction3(unittest.TestCase):
+
+    def test_1(self):
+        self.assertEqual(1, 1)
 
 
 if __name__ == '__main__':
