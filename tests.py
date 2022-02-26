@@ -49,6 +49,7 @@ class TestFunction1(unittest.TestCase):
         expection = None
         self.assertEqual(conv_num(input), expection)
 
+
 class TestFunction3(unittest.TestCase):
 
     def test_1(self):

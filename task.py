@@ -1,5 +1,6 @@
 import string
 
+
 def f1_transfer_digit(num_str, minus_flag):
     llen = len(num_str)
     sum = 0
