@@ -24,6 +24,15 @@ class TestFunction1(unittest.TestCase):
         expection = -123.0
         self.assertEqual(conv_num(input), expection)
 
+    def test_5(self):
+        input = "-0xAB"
+        expection = -171
+        self.assertEqual(conv_num(input), expection)
+
+    def test_6(self):
+        input = "-0XAb"
+        expection = -171
+        self.assertEqual(conv_num(input), expection)
 
 class TestFunction3(unittest.TestCase):
 

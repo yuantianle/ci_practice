@@ -39,14 +39,23 @@ def f1_transfer_float(num_str, minus_flag):
 
 
 def f1_transfer_hex(num_str, minus_flag):
-    hexset = ['0', '1', '2', '3', '4', '5', '6',
-              '7', '8', '9', '10', 'A', 'B', 'C',
-              'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f']
+    hexset = dict({'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
+                   '7': 7, '8': 8, '9': 9, 'A': 10, 'B': 11, 'C': 12,
+                   'D': 13, 'E': 14, 'F': 15, 'a': 10, 'b': 11, 'c': 12, 'd': 13,
+                   'e': 14, 'f': 15})
 
-    for i in range(len(num_str)):
-        if i != 0 and i != 1 and num_str[i] not in hexset:
-            return 1
-    return 1
+    ssum = 0
+    for i in range(2, len(num_str)):
+        if num_str[i] not in hexset:
+            return None
+        else:
+            hex = hexset[num_str[i]]
+            digit = pow(16, len(num_str) - 2 - (i - 2) - 1)
+            ssum += hex * digit
+    if minus_flag:
+        return -ssum
+    else:
+        return ssum
 
 
 def conv_num(num_str):
@@ -58,7 +67,7 @@ def conv_num(num_str):
     if num_str.isdigit():
         return f1_transfer_digit(num_str, minus_flag)
 
-    if (num_str[0] == '0') and (num_str[1] == 'x'):
+    if (num_str[0] == '0') and (num_str[1] == 'x' or 'X'):
         return f1_transfer_hex(num_str, minus_flag)
     else:
         return f1_transfer_float(num_str, minus_flag)
