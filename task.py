@@ -104,7 +104,8 @@ def decide_pos_neg(num, final_bytes):
 def conv_endian(num, endian='big'):
     '''Main function for converting decimal to hexadecimal'''
     # Conversion dictionary for numbers larger than 9
-    conv_dict = {10: 'A', 11: 'B',  12: 'C',  13: 'D', 14: 'E', 15: 'F', 16: 'G'}
+    conv_dict = {10: 'A', 11: 'B',  12: 'C',  13: 'D',
+                 14: 'E', 15: 'F', 16: 'G'}
     if endian not in ['big', 'little']:
         # Return None if endian type is invalid
         return None
@@ -113,14 +114,14 @@ def conv_endian(num, endian='big'):
     # Using reminder method to aggregate reminders
     q = copy_num
     rem_list = []
-    while q !=0:
+    while q != 0:
         q, rem = divmod(q, 16)
         if rem > 9:
             # Only convert to Hex values when above 9
             rem = conv_dict[rem]
         rem_list.append(rem)
     # For odd length reminders we need to append a zero
-    if len(rem_list)%2 != 0:
+    if len(rem_list) % 2 != 0:
         final_bytes, last_ind = reverse_bytes(rem_list, False)
         if (len(rem_list) - last_ind) > 0:
             tmpb = "0" + str(rem_list[-1])
