@@ -72,3 +72,68 @@ def conv_num(num_str):
         return f1_transfer_hex(num_str, minus_flag)
     else:
         return f1_transfer_float(num_str, minus_flag)
+
+
+def reverse_bytes(reminder_list, even_len=True):
+    '''Function to reverse reminder list for every two characters'''
+    last_ind = 0
+    final_bytes = []
+    final_str = ''
+    if even_len:
+        list_len = len(reminder_list)+1
+    else:
+        list_len = len(reminder_list)
+    for i in range(2, list_len, 2):
+        tmp_list = list(reminder_list[last_ind: i])
+        tmp_list.reverse()
+        string_tmp = [str(ch) for ch in tmp_list]
+        final_str = final_str.join(string_tmp)
+        final_bytes.append("".join(string_tmp))
+        last_ind = i
+    return final_bytes, last_ind
+
+
+def decide_pos_neg(num, final_bytes):
+    '''Function to decide if a given number is pos or negative'''
+    if num < 0:
+        return "-" + " ".join(final_bytes)
+    else:
+        return " ".join(final_bytes)
+
+
+def conv_endian(num, endian='big'):
+    '''Main function for converting decimal to hexadecimal'''
+    # Conversion dictionary for numbers larger than 9
+    conv_dict = {10: 'A', 11: 'B',  12: 'C',  13: 'D',
+                 14: 'E', 15: 'F', 16: 'G'}
+    if endian not in ['big', 'little']:
+        # Return None if endian type is invalid
+        return None
+    # Removing sign of number and deal with it later
+    copy_num = abs(num)
+    # Using reminder method to aggregate reminders
+    q = copy_num
+    rem_list = []
+    while q != 0:
+        q, rem = divmod(q, 16)
+        if rem > 9:
+            # Only convert to Hex values when above 9
+            rem = conv_dict[rem]
+        rem_list.append(rem)
+    # For odd length reminders we need to append a zero
+    if len(rem_list) % 2 != 0:
+        final_bytes, last_ind = reverse_bytes(rem_list, False)
+        if (len(rem_list) - last_ind) > 0:
+            tmpb = "0" + str(rem_list[-1])
+            final_bytes.append(tmpb)
+    # For even length reminders we can use it directly
+    else:
+        final_bytes, last_ind = reverse_bytes(rem_list, True)
+
+    # Reverse for big endian and append sign to the start if negative
+    if endian == 'big':
+        final_bytes.reverse()
+        return decide_pos_neg(num, final_bytes)
+
+    if endian == 'little':
+        return decide_pos_neg(num, final_bytes)
