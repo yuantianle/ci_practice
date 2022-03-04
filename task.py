@@ -74,6 +74,79 @@ def conv_num(num_str):
         return f1_transfer_float(num_str, minus_flag)
 
 
+def days_in_month(month, leap_yr=False):
+    # Function to return number of days in a month based on leap year
+    if month in {1, 3, 5, 7, 8, 10, 12}:
+        return 31
+    if month == 2:
+        if leap_yr:
+            return 29
+        return 28
+    return 30
+
+
+def date_yrs_days(num_sec):
+    # Function to covert seconds to nearest number of years
+    days = num_sec / (60 * 60 * 24)
+    yrs = days / 365.24
+    return yrs
+
+
+def check_if_lp(yr):
+    # Function to check if a given year is a leap year or not
+    if (
+        ((yr % 400 == 0) and (yr % 100 == 0)) or
+        ((yr % 4 == 0) and (yr % 100 != 0))
+       ):
+        return True
+    return False
+
+
+def app_zero(num):
+    # Function to append a zero to date if single digit
+    str_num = str(num)
+    if len(str_num) < 2:
+        return '0'+str_num
+    return str_num
+
+
+def get_days(num_sec, years):
+    # Given seconds and latest year, compute days and month
+    num_days_till_year = 0
+    for yr in range(1970, years):
+        if check_if_lp(yr):
+            num_days_till_year += 366
+        else:
+            num_days_till_year += 365
+    num_days_till_year -= 1
+    num_sec -= (num_days_till_year*86400)
+    flag = -1
+    mn_flow = 0
+    while flag < 0:
+        if (num_sec - days_in_month(mn_flow+1, check_if_lp(years))*86400) > 0:
+            mn_flow += 1
+            num_sec -= days_in_month(mn_flow, check_if_lp(years))*86400
+        else:
+            mn_flow += 1
+            flag = 1
+    total_days = num_sec / 86400
+    return total_days, mn_flow
+
+
+def date_time(num_sec):
+    # Driver function for converting seconds to date from epoch
+    final_yrs = date_yrs_days(num_sec)
+    rn_yrs = divmod(final_yrs, 1)[0]
+    yrs_current = int(1970 + rn_yrs)
+
+    dy, month = get_days(num_sec, yrs_current)
+    if month < 1:
+        month = 1
+    if dy == 0:
+        dy = 1
+    return "{}-{}-{}".format(app_zero(month), app_zero(int(dy)), yrs_current)
+
+
 def reverse_bytes(reminder_list, even_len=True):
     '''Function to reverse reminder list for every two characters'''
     last_ind = 0

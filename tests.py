@@ -1,5 +1,5 @@
 import unittest
-from task import conv_num, conv_endian
+from task import conv_num, conv_endian, date_time
 
 
 class TestFunction1(unittest.TestCase):
@@ -48,6 +48,24 @@ class TestFunction1(unittest.TestCase):
         input = "12345A"
         expection = None
         self.assertEqual(conv_num(input), expection)
+
+
+class TestFunction2(unittest.TestCase):
+
+    def test_1(self):
+        self.assertEqual(date_time(0), "01-01-1970")
+
+    def test_2(self):
+        self.assertEqual(date_time(123456789), "11-29-1973")
+
+    def test_3(self):
+        self.assertEqual(date_time(9876543210), "12-22-2282")
+
+    def test_4(self):
+        self.assertEqual(date_time(201653971200), "02-29-8360")
+
+    def test_5(self):
+        self.assertEqual(date_time(1646368001), "03-04-2022")
 
 
 class TestFunction3(unittest.TestCase):
