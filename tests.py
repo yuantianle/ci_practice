@@ -1,5 +1,5 @@
 import unittest
-from task import conv_num, conv_endian, date_time
+from task import conv_num, conv_endian, my_datetime
 
 
 class TestFunction1(unittest.TestCase):
@@ -53,19 +53,34 @@ class TestFunction1(unittest.TestCase):
 class TestFunction2(unittest.TestCase):
 
     def test_1(self):
-        self.assertEqual(date_time(0), "01-01-1970")
+        self.assertEqual(my_datetime(0), "01-01-1970")
 
     def test_2(self):
-        self.assertEqual(date_time(123456789), "11-29-1973")
+        self.assertEqual(my_datetime(123456789), "11-29-1973")
 
     def test_3(self):
-        self.assertEqual(date_time(9876543210), "12-22-2282")
+        self.assertEqual(my_datetime(9876543210), "12-22-2282")
 
     def test_4(self):
-        self.assertEqual(date_time(201653971200), "02-29-8360")
+        self.assertEqual(my_datetime(201653971200), "02-29-8360")
 
     def test_5(self):
-        self.assertEqual(date_time(1646368001), "03-04-2022")
+        self.assertEqual(my_datetime(1646368001), "03-04-2022")
+
+    def test_6(self):
+        self.assertEqual(my_datetime(98110422466), "12-30-5078")
+
+    def test_7(self):
+        self.assertEqual(my_datetime(98184022214), "04-30-5081")
+
+    def test_8(self):
+        self.assertEqual(my_datetime(9845798400), "01-01-2282")
+
+    def test_9(self):
+        self.assertEqual(my_datetime(99025232334), "12-27-5107")
+
+    def test_10(self):
+        self.assertEqual(my_datetime(99751181676), "12-28-5130")
 
 
 class TestFunction3(unittest.TestCase):

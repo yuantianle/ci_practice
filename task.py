@@ -1,4 +1,5 @@
 import string
+import math
 
 
 def f1_transfer_digit(num_str, minus_flag):
@@ -87,9 +88,18 @@ def days_in_month(month, leap_yr=False):
 
 def date_yrs_days(num_sec):
     # Function to covert seconds to nearest number of years
-    days = num_sec / (60 * 60 * 24)
-    yrs = days / 365.24
-    return yrs
+    next_sec = 0
+    yr = 1970
+    while num_sec >= 0:
+        if check_if_lp(yr+1):
+            num_sec_tmp = (366*86400)
+        else:
+            num_sec_tmp = (365*86400)
+        if num_sec - num_sec_tmp >= 0:
+            num_sec -= num_sec_tmp
+            yr += 1
+        else:
+            return yr
 
 
 def check_if_lp(yr):
@@ -121,23 +131,25 @@ def get_days(num_sec, years):
     num_days_till_year -= 1
     num_sec -= (num_days_till_year*86400)
     flag = -1
-    mn_flow = 0
+    mn_flow = 1
+    days_tmp = num_sec / 86400
     while flag < 0:
-        if (num_sec - days_in_month(mn_flow+1, check_if_lp(years))*86400) > 0:
+        if (days_tmp - days_in_month(mn_flow, check_if_lp(years))) >= 0:
+            days_tmp -= days_in_month(mn_flow, check_if_lp(years))
             mn_flow += 1
-            num_sec -= days_in_month(mn_flow, check_if_lp(years))*86400
         else:
-            mn_flow += 1
             flag = 1
-    total_days = num_sec / 86400
-    return total_days, mn_flow
+    if round(days_tmp) < 1:
+        mn_flow -= 1
+        days_tmp = days_in_month(mn_flow, check_if_lp(years))
+    return math.floor(days_tmp), mn_flow
 
 
-def date_time(num_sec):
+def my_datetime(num_sec):
     # Driver function for converting seconds to date from epoch
     final_yrs = date_yrs_days(num_sec)
     rn_yrs = divmod(final_yrs, 1)[0]
-    yrs_current = int(1970 + rn_yrs)
+    yrs_current = int(rn_yrs)
 
     dy, month = get_days(num_sec, yrs_current)
     if month < 1:
