@@ -1,5 +1,5 @@
 import unittest
-from task import conv_num
+from task import conv_num, conv_endian
 
 
 class TestFunction1(unittest.TestCase):
@@ -52,8 +52,52 @@ class TestFunction1(unittest.TestCase):
 
 class TestFunction3(unittest.TestCase):
 
+    # Basic tests
     def test_1(self):
-        self.assertEqual(1, 1)
+        input = [954786, 'big']
+        expection = '0E 91 A2'
+        self.assertEqual(conv_endian(input[0], input[1]), expection)
+
+    def test_2(self):
+        input = 954786
+        expection = '0E 91 A2'
+        self.assertEqual(conv_endian(input), expection)
+
+    def test_3(self):
+        input = -954786
+        expection = '-0E 91 A2'
+        self.assertEqual(conv_endian(input), expection)
+
+    def test_4(self):
+        input = [954786, 'little']
+        expection = 'A2 91 0E'
+        self.assertEqual(conv_endian(input[0], input[1]), expection)
+
+    def test_5(self):
+        input = [-954786, 'little']
+        expection = '-A2 91 0E'
+        self.assertEqual(conv_endian(input[0], input[1]), expection)
+
+    def test_6(self):
+        expection = '-A2 91 0E'
+        self.assertEqual(conv_endian(num=-954786, endian='little'), expection)
+
+    def test_7(self):
+        expection = None
+        self.assertEqual(conv_endian(num=-954786, endian='small'), expection)
+
+    # Random tests
+    def test_8(self):
+        expection = None
+        self.assertEqual(conv_endian(num=-954786, endian='*$%'), expection)
+
+    def test_9(self):
+        expection = '-A2 91 0E'
+        self.assertEqual(conv_endian(-954786, endian='little'), expection)
+
+    def test_10(self):
+        expection = None
+        self.assertEqual(conv_endian(num=-954786, endian='Little'), expection)
 
 
 if __name__ == '__main__':
