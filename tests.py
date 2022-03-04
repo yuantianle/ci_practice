@@ -49,6 +49,11 @@ class TestFunction1(unittest.TestCase):
         expection = None
         self.assertEqual(conv_num(input), expection)
 
+    def test_10(self):
+        input = "-0.45"
+        expection = -0.45
+        self.assertEqual(conv_num(input), expection)
+
 
 class TestFunction2(unittest.TestCase):
 

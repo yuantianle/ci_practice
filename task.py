@@ -69,7 +69,7 @@ def conv_num(num_str):
     if num_str.isdigit():
         return f1_transfer_digit(num_str, minus_flag)
 
-    if (num_str[0] == '0') and (num_str[1] == 'x' or 'X'):
+    if (num_str[0] == '0') and (num_str[1] == 'x' or num_str[1] == 'X'):
         return f1_transfer_hex(num_str, minus_flag)
     else:
         return f1_transfer_float(num_str, minus_flag)
