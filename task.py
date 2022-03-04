@@ -88,7 +88,6 @@ def days_in_month(month, leap_yr=False):
 
 def date_yrs_days(num_sec):
     # Function to covert seconds to nearest number of years
-    next_sec = 0
     yr = 1970
     while num_sec >= 0:
         if check_if_lp(yr+1):
