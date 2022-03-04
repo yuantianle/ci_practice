@@ -120,7 +120,6 @@ def get_days(num_sec, years):
             num_days_till_year += 365
     num_days_till_year -= 1
     num_sec -= (num_days_till_year*86400)
-    num_days_till_months = 0
     flag = -1
     mn_flow = 0
     while flag < 0:
