@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e434277e-4c20-4e20-ad53-b12e61890c8d" name="Default Changelist" comment="" />
+    <list default="true" id="e434277e-4c20-4e20-ad53-b12e61890c8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,8 +25,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for tests.TestFunction3.test_10">
-    <configuration name="Unittests for tests.TestFunction3" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests for tests.TestFunction1">
+    <configuration name="Unittests for tests.TestFunction1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="ci_example" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -32,11 +36,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestFunction3&quot;" />
+      <option name="_new_target" value="&quot;tests.TestFunction1&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for tests.TestFunction3.test_1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests.TestFunction1.test_10" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="ci_example" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -46,7 +50,21 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestFunction3.test_1&quot;" />
+      <option name="_new_target" value="&quot;tests.TestFunction1.test_10&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests.TestFunction1.test_2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="ci_example" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.TestFunction1.test_2&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -61,20 +79,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.TestFunction3.test_10&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for tests.TestFunction3.test_8" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="ci_example" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.TestFunction3.test_8&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -94,11 +98,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for tests.TestFunction1" />
+        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_10" />
+        <item itemvalue="Python tests.Unittests for tests.TestFunction1.test_2" />
         <item itemvalue="Python tests.Unittests for tests.TestFunction3.test_10" />
         <item itemvalue="Python tests.Unittests for tests.TestFunction3.test_9" />
-        <item itemvalue="Python tests.Unittests for tests.TestFunction3.test_8" />
-        <item itemvalue="Python tests.Unittests for tests.TestFunction3" />
-        <item itemvalue="Python tests.Unittests for tests.TestFunction3.test_1" />
       </list>
     </recent_temporary>
   </component>
